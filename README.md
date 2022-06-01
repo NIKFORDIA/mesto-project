@@ -4,4 +4,4 @@
 
 Ссылка на макет Figma: https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4
 
-Ссылка на GitHub Pages с этим проектом: (будет добавлена поздее, после загрузки проекта на GitHub Pages)
+Ссылка на GitHub Pages с этим проектом: https://nikfordia.github.io/mesto-project/
