@@ -1,0 +1,26 @@
+.popup__cross {
+  height: 32px;
+  width: 32px;
+  align-self: flex-end;
+  transform: translate(40px, -40px);
+}
+
+.popup__cross:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 570px) {
+  .popup__cross {
+    height: 25px;
+    width: 25px;
+    transform: translate(38px, -38px);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .popup__cross {
+    height: 20px;
+    width: 20px;
+    transform: translate(0px, -36px);
+  }
+}

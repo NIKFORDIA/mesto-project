@@ -1,0 +1,7 @@
+.element__caption-like:hover {
+  opacity: 0.5;
+}
+
+.element__caption-like:active {
+  background-color: #000000;
+}

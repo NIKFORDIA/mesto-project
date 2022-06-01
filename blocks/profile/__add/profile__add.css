@@ -1,0 +1,24 @@
+.profile__add {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #000000;
+}
+
+.profile__add:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 950px) {
+  .profile__add {
+    width: 282px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

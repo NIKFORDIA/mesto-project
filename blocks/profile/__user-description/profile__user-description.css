@@ -1,0 +1,12 @@
+.profile__user-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 950px) {
+  .profile__user-description {
+    margin-top: 26px;
+    margin-bottom: 36px;
+  }
+}
