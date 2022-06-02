@@ -5,9 +5,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .profile__box:hover {
   opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .profile__box {
+    width: 18px;
+    height: 18px;
+  }
 }

@@ -1,15 +1,13 @@
 .popup__container {
-  font-family: Inter;
-  display: flex;
-  flex-direction: column;
+  font-family: "Inter", "Arial", sans-serif;
+  align-self: center;
   background-color: #ffffff;
   width: 430px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  position: fixed;
-  left: 50%;
-  top: 50vh;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 570px) {

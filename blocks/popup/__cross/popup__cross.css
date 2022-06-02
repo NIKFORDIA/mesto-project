@@ -1,19 +1,27 @@
 .popup__cross {
-  height: 32px;
+  position: absolute;
+  border: none;
   width: 32px;
-  align-self: flex-end;
-  transform: translate(40px, -40px);
+  height: 32px;
+  top: -40px;
+  right: -40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-image: url(../../../images/Cross.svg);
 }
 
 .popup__cross:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 570px) {
   .popup__cross {
     height: 25px;
     width: 25px;
-    transform: translate(38px, -38px);
+    top: -38px;
+    right: -38px;
+    background-size: cover;
   }
 }
 
@@ -21,6 +29,7 @@
   .popup__cross {
     height: 20px;
     width: 20px;
-    transform: translate(0px, -36px);
+    top: -36px;
+    right: 0;
   }
 }

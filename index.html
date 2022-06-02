@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesto</title>
+    <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
@@ -22,7 +22,7 @@
             <div class="profile__user-description">
               <div class="profile__name">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <button class="profile__box">
+                <button class="profile__box" type="button">
                   <img
                     class="profile__box-pen"
                     src="./images/Pen.svg"
@@ -30,10 +30,10 @@
                   />
                 </button>
               </div>
-              <h2 class="profile__subtitle">Исследователь океана</h2>
+              <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
-          <button class="profile__add">
+          <button class="profile__add" type="button">
             <img
               class="profile__add-plus"
               src="./images/Plus.svg"
@@ -42,15 +42,15 @@
           </button>
         </section>
         <section class="elements">
-          <div class="element">
+          <article class="element">
             <img
               class="element__image"
               src="./images/Elbrus.jpg"
               alt="Эльбрус"
             />
             <div class="element__caption">
-              <p class="element__caption-text">Эльбрус</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Эльбрус</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -58,17 +58,17 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
+          <article class="element">
             <img
               class="element__image"
               src="./images/Ruskeala.jpg"
               alt="Рускеала"
             />
             <div class="element__caption">
-              <p class="element__caption-text">Рускеала</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Рускеала</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -76,13 +76,13 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
+          <article class="element">
             <img class="element__image" src="./images/Kizhi.jpg" alt="Кижи" />
             <div class="element__caption">
-              <p class="element__caption-text">Кижи</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Кижи</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -90,17 +90,17 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
+          <article class="element">
             <img
               class="element__image"
               src="./images/Lenskie.jpg"
               alt="Ленские столбы"
             />
             <div class="element__caption">
-              <p class="element__caption-text">Ленские столбы</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Ленские столбы</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -108,17 +108,17 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
+          <article class="element">
             <img
               class="element__image"
               src="./images/Krenitsin.jpg"
               alt="Вулкан Креницына"
             />
             <div class="element__caption">
-              <p class="element__caption-text">Вулкан Креницына</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Вулкан Креницына</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -126,17 +126,17 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
+          <article class="element">
             <img
               class="element__image"
               src="./images/Seliger.jpg"
               alt="Селигер"
             />
             <div class="element__caption">
-              <p class="element__caption-text">Селигер</p>
-              <button class="element__box-like">
+              <h2 class="element__caption-text">Селигер</h2>
+              <button class="element__box-like" type="button">
                 <img
                   class="element__caption-like"
                   src="./images/Like.svg"
@@ -144,39 +144,37 @@
                 />
               </button>
             </div>
-          </div>
+          </article>
         </section>
       </main>
       <footer class="footer">
-        <div class="footer__copyright">© Евгений Красильников</div>
+        <h2 class="footer__copyright">© Евгений Красильников</h2>
       </footer>
     </div>
     <div class="popup popup_opened">
-      <form class="popup__container">
-        <img
-          class="popup__cross"
-          src="./images/Cross.svg"
-          alt="Кнопка закрытия формы"
-        />
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <fieldset class="popup__form">
-          <input
-            class="popup__input"
-            type="text"
-            name="username"
-            value="Жак-Ив Кусто"
-            placeholder="Имя пользователя"
-          />
-          <input
-            class="popup__input"
-            type="text"
-            name="activity"
-            value="Исследователь океана"
-            placeholder="Род деятельности"
-          />
-        </fieldset>
-        <button type="submit" class="popup__button">Сохранить</button>
-      </form>
+      <div class="popup__container">
+        <button class="popup__cross" type="button"></button>
+        <form class="popup__form" name="popup__form">
+          <fieldset class="popup__fieldset">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input
+              class="popup__input"
+              type="text"
+              name="username"
+              value="Жак-Ив Кусто"
+              placeholder="Имя пользователя"
+            />
+            <input
+              class="popup__input"
+              type="text"
+              name="activity"
+              value="Исследователь океана"
+              placeholder="Род деятельности"
+            />
+            <button type="submit" class="popup__button">Сохранить</button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </body>
 </html>
