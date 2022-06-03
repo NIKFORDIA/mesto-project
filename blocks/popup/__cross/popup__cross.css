@@ -5,7 +5,7 @@
   height: 32px;
   top: -40px;
   right: -40px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   background-image: url(../../../images/Cross.svg);
 }
