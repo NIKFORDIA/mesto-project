@@ -1,5 +1,13 @@
 .element__box-like {
+  background-image: url(../../../images/Like.svg);
   border: none;
   padding: 0;
-  background-color: #ffffff;
+  min-width: 22px;
+  height: 19px;
+  background-color: transparent;
+}
+
+.element__box-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
