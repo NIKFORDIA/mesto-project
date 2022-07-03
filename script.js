@@ -6,7 +6,8 @@ const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const popupName = document.querySelector(".popup__name");
 const popupJob = document.querySelector(".popup__textjob");
-const popupSaveButton = document.querySelector(".popup__button");
+const cardTemplate = document.querySelector("#template").content;
+const popupSaveProfileButton = document.querySelector(".popup__buttoninfo");
 const initialCards = [
   {
     name: "Архыз",
@@ -33,7 +34,7 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-const elements = document.querySelector(".elements");
+const cardsContainer = document.querySelector(".elements");
 const popupFullPicture = document.querySelector(".popup__full-picture");
 const popupCaption = document.querySelector(".popup__caption");
 const popupCrossPicture = document.querySelector(".popup__cross-picture");
@@ -45,51 +46,53 @@ const formPlace = document.querySelector(".popup__form-place");
 const placeName = formPlace.querySelector(".popup__placename");
 const placeLink = formPlace.querySelector(".popup__placelink");
 const crossForPicture = document.querySelector(".popup__cross-picture");
+const formEditInfo = document.querySelector(".popup__formeditinfo");
 
 //открытие popup
-function popupOpened(popup) {
+function openPopup(popup) {
   popup.classList.add("popup_opened");
 }
 
 popupEdit.addEventListener("click", function () {
-  popupOpened(popupProfile);
+  popupName.value = profileName.textContent;
+  popupJob.value = profileJob.textContent;
+  openPopup(popupProfile);
 });
 
 //закрытие popup при нажатии на крестик
-function popupClosed(popup) {
+function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
 popupCross.addEventListener("click", function () {
-  popupClosed(popupProfile);
+  closePopup(popupProfile);
 });
 
 //редактируем профиль
-function formSubmitHandler(evt) {
+function handleFormSubmit(evt) {
   profileName.textContent = popupName.value;
   profileJob.textContent = popupJob.value;
   evt.preventDefault();
-  popupClosed(popupProfile);
+  closePopup(popupProfile);
 }
 
-popupSaveButton.addEventListener("submit", formSubmitHandler);
+formEditInfo.addEventListener("submit", handleFormSubmit);
 
 //Добавление какой-то новой карточки
-function cardAdding(name, link) {
-  const card = elementMaking(name, link);
-  elements.prepend(card);
+function addCard(name, link) {
+  const card = makElement(name, link);
+  cardsContainer.prepend(card);
 }
 
 //Добавление "оригинальной шестёрки" карточек
-function originalCards() {
+function getOriginalCards() {
   initialCards.forEach((item) => {
-    cardAdding(item.name, item.link);
+    addCard(item.name, item.link);
   });
 }
-originalCards();
+getOriginalCards();
 
 //Создание шаблона для последующего добавления карточки
-function elementMaking(name, link) {
-  const cardTemplate = document.querySelector("#template").content;
+function makElement(name, link) {
   const element = cardTemplate.querySelector(".element").cloneNode(true);
   const pictureElement = element.querySelector(".element__image");
 
@@ -109,7 +112,7 @@ function elementMaking(name, link) {
 
   pictureElement.addEventListener("click", function () {
     fullPicture(name, link);
-    popupOpened(popupPicture);
+    openPopup(popupPicture);
   });
 
   function fullPicture(name, link) {
@@ -123,24 +126,24 @@ function elementMaking(name, link) {
 
 //Открытие и закрытие popop'а добавления карточки
 plusButton.addEventListener("click", function () {
-  popupOpened(popupPlace);
+  openPopup(popupPlace);
 });
 
 placeCross.addEventListener("click", function () {
-  popupClosed(popupPlace);
+  closePopup(popupPlace);
 });
 
 //Добавление кароточки по кнопке "Создать"
-function cardSubmitHandler(evt) {
-  cardAdding(placeName.value, placeLink.value);
+function handleCardSubmit(evt) {
+  addCard(placeName.value, placeLink.value);
   evt.preventDefault();
-  popupClosed(popupPlace);
+  closePopup(popupPlace);
   evt.target.reset();
 }
 
-formPlace.addEventListener("submit", cardSubmitHandler);
+formPlace.addEventListener("submit", handleCardSubmit);
 
 //Добавление кнопки закрытия для раскрытой popup-карточки
 crossForPicture.addEventListener("click", function () {
-  popupClosed(popupPicture);
+  closePopup(popupPicture);
 });
