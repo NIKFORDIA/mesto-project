@@ -1,42 +1,12 @@
-//открытие popup
 const popupEdit = document.querySelector(".profile__box");
 const popupBox = document.querySelector(".popup");
-function popupOpened(popup) {
-  popup.classList.add("popup_opened");
-}
-
 const popupProfile = document.querySelector(".popup__profile");
-
-popupEdit.addEventListener("click", function () {
-  popupOpened(popupProfile);
-});
-
-//закрытие popup при нажатии на крестик
 const popupCross = document.querySelector(".popup__cross");
-function popupClosed(popup) {
-  popup.classList.remove("popup_opened");
-}
-popupCross.addEventListener("click", function () {
-  popupClosed(popupProfile);
-});
-
-//редактируем профиль
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const popupName = document.querySelector(".popup__name");
 const popupJob = document.querySelector(".popup__textjob");
 const popupSaveButton = document.querySelector(".popup__button");
-
-function formSubmitHandler(evt) {
-  profileName.textContent = popupName.value;
-  profileJob.textContent = popupJob.value;
-  evt.preventDefault();
-  popupClosed(popupProfile);
-}
-
-popupSaveButton.addEventListener("submit", formSubmitHandler);
-
-//Добавление карточек
 const initialCards = [
   {
     name: "Архыз",
@@ -63,8 +33,45 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-
 const elements = document.querySelector(".elements");
+const popupFullPicture = document.querySelector(".popup__full-picture");
+const popupCaption = document.querySelector(".popup__caption");
+const popupCrossPicture = document.querySelector(".popup__cross-picture");
+const popupPicture = document.querySelector(".popup__picture");
+const plusButton = document.querySelector(".profile__add");
+const popupPlace = document.querySelector(".popup__place");
+const placeCross = document.querySelector(".popup__place-cross");
+const formPlace = document.querySelector(".popup__form-place");
+const placeName = formPlace.querySelector(".popup__placename");
+const placeLink = formPlace.querySelector(".popup__placelink");
+const crossForPicture = document.querySelector(".popup__cross-picture");
+
+//открытие popup
+function popupOpened(popup) {
+  popup.classList.add("popup_opened");
+}
+
+popupEdit.addEventListener("click", function () {
+  popupOpened(popupProfile);
+});
+
+//закрытие popup при нажатии на крестик
+function popupClosed(popup) {
+  popup.classList.remove("popup_opened");
+}
+popupCross.addEventListener("click", function () {
+  popupClosed(popupProfile);
+});
+
+//редактируем профиль
+function formSubmitHandler(evt) {
+  profileName.textContent = popupName.value;
+  profileJob.textContent = popupJob.value;
+  evt.preventDefault();
+  popupClosed(popupProfile);
+}
+
+popupSaveButton.addEventListener("submit", formSubmitHandler);
 
 //Добавление какой-то новой карточки
 function cardAdding(name, link) {
@@ -114,15 +121,6 @@ function elementMaking(name, link) {
   return element;
 }
 
-const popupFullPicture = document.querySelector(".popup__full-picture");
-const popupCaption = document.querySelector(".popup__caption");
-const popupCrossPicture = document.querySelector(".popup__cross-picture");
-const popupPicture = document.querySelector(".popup__picture");
-
-const plusButton = document.querySelector(".profile__add");
-const popupPlace = document.querySelector(".popup__place");
-const placeCross = document.querySelector(".popup__place-cross");
-
 //Открытие и закрытие popop'а добавления карточки
 plusButton.addEventListener("click", function () {
   popupOpened(popupPlace);
@@ -131,10 +129,6 @@ plusButton.addEventListener("click", function () {
 placeCross.addEventListener("click", function () {
   popupClosed(popupPlace);
 });
-
-const formPlace = document.querySelector(".popup__form-place");
-const placeName = formPlace.querySelector(".popup__placename");
-const placeLink = formPlace.querySelector(".popup__placelink");
 
 //Добавление кароточки по кнопке "Создать"
 function cardSubmitHandler(evt) {
@@ -147,7 +141,6 @@ function cardSubmitHandler(evt) {
 formPlace.addEventListener("submit", cardSubmitHandler);
 
 //Добавление кнопки закрытия для раскрытой popup-карточки
-const crossForPicture = document.querySelector(".popup__cross-picture");
 crossForPicture.addEventListener("click", function () {
   popupClosed(popupPicture);
 });
